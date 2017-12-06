@@ -1,0 +1,50 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+
+\title{Desarrollo de aplicaciones Web: Proyecto Final}
+\author{Addy Silvana Gallareta Olivares \\ Carlos J. Rosado Trujillo \\ Juan Luis Uvera Ramírez}
+
+\begin{document}
+
+\maketitle
+El en presente documento presenta conceptos técnicos utilizados para la implementación del proyecto final de desarrollo de aplicaciones web. 
+    En la actualidad las aplicaciones web son de suma importancia debido a la flexibilidad que estas tienen para ejecutarse en múltiples plataformas, es por esto, que nuestro proyecto Smart Closet, un proyecto IoT con la función de clasificar la ropa con visión artificial según el tipo y el color. Luego se almacenará en el armario también en una base de datos que permitirá al usuario verlo en una interfaz de usuario, para esto decidimos utilizar una aplicación web por la portabilidad que estas representan. Asimismo, el sistema es capaz de darte la ropa donde el usuario tiene dos opciones para elegir sus conjuntos en la interfaz de usuario o el sistema puede darle una opción para usar.\\
+\medskip
+
+\maketitle
+\title{\textbf{\large{1. Arquitectura Técnica}}\\}
+La aplicación web es creada en HTML (Hypertext Markup Language), y WSDL (Web Services Definition Language) se utiliza para describir el servicio web, es decir, es la manera en la cual el proveedor y el cliente se comunican. Se utiliza SOAP (Simple Object Access Protocol) para permitir correr el sistema en múltiples sistemas operativos, y para su comunicación sus mensajes se enrutan en un SOAP. Los directorios UDDI (Universal Description Discovery and Integration) actúan como un guía de los servicios web\\
+\medskip
+
+\maketitle
+\title{\textbf{\large{2. Servicios Web}}\\}
+Estos servicios proporcionan mecanismos de comunicación estándares entre diferentes aplicaciones, que interactúan entre sí para presentar información dinámica al usuario. Para proporcionar ínter-operatividad y expansibilidad entre estas aplicaciones, y que al mismo tiempo sea posible su combinación para realizar operaciones complejas, es necesaria una arquitectura de referencia estándar.
+Para nuestro proyecto se utilizó el servicio de Google App Engine con APIs para que los usuarios pudieran registrar nuestros closets con sus respectivas prendas, detalles de las prendas, entre otras cosas. Asimismo, se puede modificar, eliminar y agregar información con el fin de tener control de la información centralizada.
+Por otra parte, se implementó una interfaz gráfica para nuestro usuario final haciendo uso de Flask python webserver para poder controlar actuadores de nuestro sistema físico, debido a que éste nos permite ejecutar de manera eficiente nuestros programas python de control de los nuestros actuadores.\\
+\medskip
+
+\maketitle
+\title{\textbf{\large{3. Python and Google App engine}}\\}
+Este servicio es del tipo Plataforma como Servicio o Platform as a Service (PaaS), nos permite publicar aplicaciones web en línea sin necesidad de preocuparnos por la parte de la infraestructura, con un enfoque en la construcción de nuestra aplicación y en la posibilidad de correrla directamente sobre la infraestructura de Google, es decir, la que Google usa para sus propios productos. Este servicio es compatible con los lenguajes de programación Python y Java. 
+Se utilizó Python debido al intérprete de Python que el servicio utiliza, donde se importa nuestro archivo app.yaml y se configuran los entornos de ejecución de nuestra aplicación.
+\\
+\medskip
+
+\maketitle
+\title{\textbf{\large{4. Cloud Datastore}}\\}
+Al utilizar el servicio de Google App Engine éste proporciona acceso a Google Cloud Datastore donde se almacenan nuestros datos. Cloud Datastore es una base de datos SQL que requiere mantenimiento mínimo, que admite JDBC y DB-API. Este servicio permite crear, configurar y usar bases de datos relacionales con aplicaciones de App Engine. Google Cloud SQL ofrece MySQL 5.5 y 5.6.
+Las ventajas de este servicio son muchas, debido a la arquitectura del almacenamiento nuestro sistema es fácilmente escalable y estable.\\
+\medskip
+
+\maketitle
+\title{\textbf{\Large{Referencias}}\\}
+\\Carles Mateu. (2004). Carles Mateu Software libre Desarrollo de U Formación de Posgrado aplicaciones web. 02/12/2017, de UOC Sitio web:\\ http://libros.metabiblioteca.org/bitstream/001/591/1/004/20Desarrollo/20de/20aplicaciones/20web.pdf
+\\ \\
+"Python Runtime Environment - Google App Engine - Google Code". Code.google.com. 1999-02-22. Retrieved 02/12/2017.
+\\ \\
+Sanderson, Dan (2010). Programming Google App Engine: Build and Run Scalable Web Apps on Google's Infrastructure. O'Reilly Media. ISBN 978-0-596-52272-8.
+\\ \\
+\medskip
+
+\end{document}
